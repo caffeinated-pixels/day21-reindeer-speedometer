@@ -36,6 +36,10 @@ let destination = [
   },
 ]
 
+function displayPreviousLocation() {
+  prevLocationDisplay.textContent = `Previous location: ${prevLocation.name}`
+}
+
 function setPrevLocation(currentLocation) {
   console.log(currentLocation)
   const currentIndex = destination.findIndex(
@@ -44,9 +48,8 @@ function setPrevLocation(currentLocation) {
 
   const previousIndex =
     currentIndex === 0 ? destination.length - 1 : currentIndex - 1
-  console.log(currentIndex, previousIndex)
   prevLocation = destination[previousIndex]
-  console.log(prevLocation)
+  displayPreviousLocation()
 }
 
 setPrevLocation(select.value)
