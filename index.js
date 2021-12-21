@@ -4,9 +4,9 @@ const select = document.getElementById('select')
 const time = document.getElementById('time')
 
 select.addEventListener('change', (e) => setPrevLocation(e.target.value))
+time.addEventListener('change', calculateSpeed)
 
 let prevLocation = {}
-let currentLocation = ''
 let timeTaken = 0
 
 let destination = [
@@ -41,7 +41,6 @@ function displayPreviousLocation() {
 }
 
 function setPrevLocation(currentLocation) {
-  console.log(currentLocation)
   const currentIndex = destination.findIndex(
     (location) => location.name === currentLocation
   )
@@ -54,9 +53,13 @@ function setPrevLocation(currentLocation) {
 
 setPrevLocation(select.value)
 
-function calculateSpeed() {
-  let speed = 0
-  currentLocation = select.value
+function calculateSpeed(e) {
+  const time = e.target.value
+  const distance = prevLocation.distanceFromPrevDestination
+
+  const speed = Math.round(distance / time)
+
+  console.log(speed)
 
   // Task:
   // - Retrieve distance from previous destination from array of objects.
