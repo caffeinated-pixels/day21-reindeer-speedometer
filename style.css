@@ -40,6 +40,10 @@ body {
   max-width: 250px;
 }
 
+.info-display {
+  margin-top: 0;
+}
+
 label {
   text-align: left;
 }
