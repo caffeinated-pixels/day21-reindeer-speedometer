@@ -36,6 +36,7 @@ let destination = [
     distanceFromPrevDestination: 1729,
   },
 ]
+// these distances appear to be nautical miles, so the speed units will be knots (i.e. nautical mph)
 
 function displayPreviousLocation() {
   prevLocationDisplay.textContent = prevLocation.name
