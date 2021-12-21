@@ -36,7 +36,6 @@ let destination = [
     distanceFromPrevDestination: 1729,
   },
 ]
-// these distances appear to be nautical miles, so the speed units will be knots (i.e. nautical mph)
 
 function displayPreviousLocation() {
   prevLocationDisplay.textContent = prevLocation.name
@@ -55,10 +54,12 @@ function setPrevLocation(currentLocation) {
   calculateSpeed(time.value)
 }
 
+// these distances appear to be nautical miles, so the speed units will be knots (i.e. nautical mph)
 function calculateSpeed(time) {
   const distance = prevLocation.distanceFromPrevDestination
 
-  const speed = Math.round(distance / time)
+  const speed = Math.round((distance / time) * 60).toLocaleString()
+  // I'm guessing that the time is in minutes, otherwise Santa would have a very long night ahead of him!
 
   speedDisplay.textContent = `${speed} knots`
 }
