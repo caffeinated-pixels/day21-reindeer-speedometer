@@ -1,4 +1,5 @@
 const prevLocationDisplay = document.getElementById('prev-location')
+const distanceDisplay = document.getElementById('distance')
 const speedometer = document.getElementById('speedometer')
 const select = document.getElementById('select')
 const time = document.getElementById('time')
@@ -37,7 +38,8 @@ let destination = [
 ]
 
 function displayPreviousLocation() {
-  prevLocationDisplay.textContent = `Previous location: ${prevLocation.name}`
+  prevLocationDisplay.textContent = prevLocation.name
+  distanceDisplay.textContent = prevLocation.distanceFromPrevDestination
 }
 
 function setPrevLocation(currentLocation) {
