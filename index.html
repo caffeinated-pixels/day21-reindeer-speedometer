@@ -10,8 +10,11 @@
   <body>
     <h1>Reindeer speedometer 🦌</h1>
     <div class="container">
-      <p><b>Previous location:</b> <span id="prev-location"></span></p>
-      <p><b>Distance:</b> <span id="distance"></span> NM</p>
+      <p>
+        <b>Previous location:</b>
+        <span id="prev-location" class="prev-location"></span>
+      </p>
+      <p><b>Distance:</b> <span id="distance" class="distance"></span> NM</p>
       <label for="select">Current location:</label>
       <select id="select">
         <option id="munich" value="Munich">Munich</option>
@@ -28,6 +31,9 @@
       Enter current location and journey time to discover average reindeer
       speed.
     </p>
+    <div class="speed-container">
+      <p id="speed-display" class="speed-display"></p>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
